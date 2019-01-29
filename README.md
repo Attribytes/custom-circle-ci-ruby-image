@@ -1,0 +1,1 @@
+# custom-circle-ci-ruby-image
