@@ -9,4 +9,14 @@ RUN mkdir -p ~/bin && curl -L -o ~/bin/jq https://github.com/stedolan/jq/release
 # Install Elastic Beanstalk CLI
 RUN python -m pip install awsebcli --upgrade --user
 
+# Install Chromedriver for linux
+RUN mkdir -p ~/bin/chromedriver && \
+    wget -N http://chromedriver.storage.googleapis.com/83.0.4103.39/chromedriver_linux64.zip -P ~/bin && \
+    unzip ~/bin/chromedriver_linux64.zip -d ~/bin/chromedriver && \
+    sudo mv -f ~/bin/chromedriver /usr/local/share/ && \
+    sudo chmod +x /usr/local/share/chromedriver && \
+    sudo rm /usr/local/bin/chromedriver && \
+    sudo ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver && \
+    sudo ln -s /usr/local/share/chromedriver /usr/bin/chromedriver
+
 CMD ["/bin/sh"]
