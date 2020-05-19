@@ -1,4 +1,4 @@
-FROM circleci/ruby:2.4.1-node-browsers
+FROM circleci/ruby:2.4.10-node-browsers
 
 # Install apt dependencies
 RUN sudo apt-get update && sudo apt-get install awscli libicu-dev python-dev python-pip --fix-missing
@@ -19,8 +19,8 @@ RUN /bin/sh -c FIREFOX_URL="https://s3.amazonaws.com/circle-downloads/firefox-mo
     firefox --version
 
 # Install Chromedriver for linux
-RUN /bin/sh -c export CHROMEDRIVER_RELEASE=$(curl --location --fail --retry 3 http://chromedriver.storage.googleapis.com/LATEST_RELEASE) && \
-    curl --silent --show-error --location --fail --retry 3 --output /tmp/chromedriver_linux64.zip "http://chromedriver.storage.googleapis.com/$CHROMEDRIVER_RELEASE/chromedriver_linux64.zip" && \
+RUN /bin/sh -c export CHROMEDRIVER_RELEASE="83.0.4103.39" && \
+    curl --silent --show-error --location --fail --retry 3 --output /tmp/chromedriver_linux64.zip "http://chromedriver.storage.googleapis.com/83.0.4103.39/chromedriver_linux64.zip" && \
     cd /tmp && \
     unzip chromedriver_linux64.zip && \
     rm -rf chromedriver_linux64.zip && \
