@@ -1,6 +1,6 @@
 # custom-circle-ci-ruby-image
 
-This docker image is based on circleci/ruby:2.4.1-node-browsers, and includes a number of extra layers:
+This docker image is based on circleci/ruby:2.4.10-stretch-node-browsers, and includes a number of extra layers:
 
 1. AWS CLI
 2. Python and Python dev dependencies
