@@ -19,8 +19,8 @@ RUN /bin/sh -c FIREFOX_URL="https://s3.amazonaws.com/circle-downloads/firefox-mo
     firefox --version
 
 # Install Chromedriver for linux
-RUN /bin/sh -c export CHROMEDRIVER_RELEASE="83.0.4103.39" && \
-    curl --silent --show-error --location --fail --retry 3 --output /tmp/chromedriver_linux64.zip "http://chromedriver.storage.googleapis.com/83.0.4103.39/chromedriver_linux64.zip" && \
+RUN /bin/sh -c export CHROMEDRIVER_RELEASE="81.0.4044.138" && \
+    curl --silent --show-error --location --fail --retry 3 --output /tmp/chromedriver_linux64.zip "http://chromedriver.storage.googleapis.com/81.0.4044.138/chromedriver_linux64.zip" && \
     cd /tmp && \
     unzip chromedriver_linux64.zip && \
     rm -rf chromedriver_linux64.zip && \
