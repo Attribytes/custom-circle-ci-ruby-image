@@ -1,4 +1,4 @@
-FROM circleci/ruby:2.4.10-node-browsers
+FROM circleci/ruby:2.6.6-node-browsers
 
 # Install apt dependencies
 RUN sudo apt-get update && sudo apt-get install awscli libicu-dev python-dev python-pip --fix-missing
