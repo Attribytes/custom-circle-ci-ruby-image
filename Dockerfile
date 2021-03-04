@@ -21,6 +21,7 @@ RUN sudo apt-get update && sudo apt-get install awscli libicu-dev python-dev pyt
     rm -rf chromedriver_linux64.zip && \
     sudo mv chromedriver /usr/local/bin/chromedriver && \
     sudo chmod +x /usr/local/bin/chromedriver && \
-    chromedriver --version
+    chromedriver --version && \
+    (curl -sL https://sentry.io/get-cli/ | bash)
 
 CMD ["/bin/sh"]
