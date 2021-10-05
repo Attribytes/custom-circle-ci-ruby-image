@@ -1,4 +1,4 @@
-FROM circleci/ruby:2.6.6-node-browsers
+FROM cimg/ruby:2.6.8-browsers
 
 # Install apt dependencies
 # Install jq so circle-ci-do-exclusively will work
