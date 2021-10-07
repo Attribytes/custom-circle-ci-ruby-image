@@ -10,7 +10,12 @@ This docker image is based on the circle ci ruby image, and includes a number of
 ## Building the Docker Image
 Simply check out the repo and run:
 ```
-docker build .
+make build
+```
+
+## Pushing builds to Docker Hub - This will push your current branch as a named image
+```bash
+make push
 ```
 
 ## Automatic Builds

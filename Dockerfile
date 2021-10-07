@@ -5,7 +5,7 @@ FROM cimg/ruby:2.6.8-browsers
 # Install Elastic Beanstalk CLI
 # Install latest Firefox driver
 # Install Chromedriver for linux
-RUN sudo apt-get update && sudo apt-get install awscli libicu-dev python-dev python-pip --fix-missing && \
+RUN sudo apt-get update && sudo apt-get install awscli libicu-dev python-dev --fix-missing && curl https://bootstrap.pypa.io/pip/2.7/get-pip.py -o get-pip.py && python get-pip.py && \
     mkdir -p ~/bin && curl -L -o ~/bin/jq https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64 && chmod +x ~/bin/jq && \
     python -m pip install awsebcli==3.19.2 pyrsistent==0.16.0 --upgrade --user && \
     curl --silent --show-error --location --fail --retry 3 --output /tmp/firefox.deb "https://s3.amazonaws.com/circle-downloads/firefox-mozilla-build_47.0.1-0ubuntu1_amd64.deb" && \
